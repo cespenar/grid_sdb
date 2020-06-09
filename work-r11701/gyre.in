@@ -1,0 +1,114 @@
+&constants
+/
+
+&model
+    model_type = 'EVOL'
+    file = 'current_model.GYRE'
+    file_format = 'MESA'
+/
+
+&mode
+    l = 0
+    tag = 'radial'
+/
+
+&mode
+    l = 1
+    tag = 'g'
+/
+
+&mode
+    l = 1
+    tag = 'p'
+/
+
+&mode
+    l = 2
+    tag = 'g'
+/
+
+&mode
+    l = 2
+    tag = 'p'
+/
+
+&mode
+    l = 3
+    tag = 'g'
+/
+
+&mode
+    l = 3
+    tag = 'p'
+/
+
+&mode
+    l = 4
+    tag = 'g'
+/
+
+&mode
+    l = 4
+    tag = 'p'
+/
+
+
+&osc
+    outer_bound = 'VACUUM'
+    nonadiabatic = .FALSE.
+    tag_list = 'radial, g, p,'
+/
+
+&num
+    diff_scheme = 'COLLOC_GL4'
+/
+
+&scan
+    grid_type = 'INVERSE'
+    freq_min = 3.0
+    freq_max = 50.0
+    freq_min_units = 'CYC_PER_DAY'
+    freq_max_units = 'CYC_PER_DAY'
+    n_freq = 1000
+    tag_list = 'g'
+/
+
+&scan
+    grid_type = 'LINEAR'
+    freq_min = 50.0
+    freq_max = 1000.0
+    freq_min_units = 'CYC_PER_DAY'
+    freq_max_units = 'CYC_PER_DAY'
+    n_freq = 1000
+    tag_list = 'p'
+/
+
+&scan
+    grid_type = 'LINEAR'
+    freq_min = 30.0
+    freq_max = 1000.0
+    freq_min_units = 'CYC_PER_DAY'
+    freq_max_units = 'CYC_PER_DAY'
+    n_freq = 100
+    tag_list = 'radial'
+/
+
+&grid
+    alpha_osc = 10
+    alpha_exp = 2
+    n_inner = 5
+/
+
+
+&ad_output
+    summary_file = 'summary.txt'
+    summary_file_format = 'TXT'	
+    summary_item_list = 'M_star,R_star,L_star,l,n_pg,freq,omega'
+    freq_units = 'CYC_PER_DAY'
+/
+
+&nad_output
+    summary_file = 'summary_nad.txt'
+    summary_file_format = 'TXT'	
+    summary_item_list = 'M_star,R_star,L_star,l,n_pg,n_p,n_g,omega,freq,freq_units,f_T,f_g,psi_T,psi_g,beta,E,E_norm,W'
+/

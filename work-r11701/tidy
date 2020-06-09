@@ -1,0 +1,11 @@
+#!/bin/sh
+# Clean the working dirrectory
+
+./clean
+rm -f inlist_temp
+rm -f LOGS/*
+rm -f photos/*
+rm -f pgstar_out/*
+
+echo "Directory has been cleaned! :3"
+cat ascii_cat
